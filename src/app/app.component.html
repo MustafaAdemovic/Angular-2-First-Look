@@ -1,9 +1,22 @@
-<div class="container">
-    <form>
-        <h5>Add a LInk</h5>
-        <div class="form-group row">
-            <label for="title" >Title: </label>
-            <input type="text" class="form-control" name="title">
-        </div>
-    </form>
+<form class="ui large form segment">
+    <h3 class="ui header">Add a LInk</h3>
+    <div class="field">
+        <label for="title" >Title: </label>
+        <input type="text" name="title" #newTitle>
+    </div>
+    <div class="field">
+        <label for="link" >Link: </label>
+        <input type="text" name="link" #newLink>
+    </div>
+    <button (click)="addArticle(newTitle, newLink)"
+    class="ui positive right floated button">
+         Submit link
+    </button>
+    <br>
+    <br>
+</form>
+<br>
+<br>
+<div class="ui grid posts">
+    <reddit-article *ngFor="let foobar of sortedArticles()" [article]="foobar"></reddit-article>
 </div>

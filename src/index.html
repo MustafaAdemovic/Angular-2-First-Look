@@ -8,6 +8,7 @@
     
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
+    <link rel="stylesheet" href="node_modules\semantic-ui\dist\semantic.css">
     
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -21,6 +22,22 @@
   </head>
 
   <body>
-    <my-app>Loading AppComponent content here ...</my-app>
+     <!-- Menu Bar -->
+    <div class="ui menu">
+      <div class="ui container">
+        <a href="#" class="header item">
+          Menu
+        </a>
+        <div class="header item borderless">
+          <h1 class="ui header">
+            Angular 2 Simple Reddit
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui main text container">
+     <my-app>Loading AppComponent content here ...</my-app>
+    </div>
   </body>
 </html>

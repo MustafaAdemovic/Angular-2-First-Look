@@ -9,9 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var article_1 = require('./article');
 var AppComponent = (function () {
     function AppComponent() {
+        this.articles = [
+            new article_1.Article('Angular 2', 'http://angular.io', 3),
+            new article_1.Article('Fullstack', 'http://fullstack.io', 2),
+            new article_1.Article('Angular Homepage', 'http://angular.io', 1)
+        ];
     }
+    AppComponent.prototype.addArticle = function (title, link) {
+        this.articles.push(new article_1.Article(title.value, link.value));
+        title.value = '';
+        link.value = '';
+        return false;
+    };
+    AppComponent.prototype.sortedArticles = function () {
+        return this.articles.sort(function (a, b) { return b.votes - a.votes; });
+    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
